@@ -8,3 +8,11 @@ def home(request):
 
 def posts_index(request):
     return render(request, "posts/index.html")
+
+
+def deals_index(request):
+    return render(request, "deals/index.html")
+
+
+def thrifts_index(request):
+    return render(request, "thrifts/index.html")

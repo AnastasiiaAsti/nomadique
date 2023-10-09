@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+<div class="container-fluid">
+    <h1 class="m-3 text-center"></h1>
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{% url 'home'%}">Home</a></li>
+        <li class="breadcrumb-item"><a href="{% url 'deals_index'%}">All Posts</a></li>
+        <li class="breadcrumb-item active">Travel</li>
+    </ol>
+
+    {% block content %}
