@@ -1,11 +1,61 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %}{% block content %}
 
 <div class="container-fluid">
     <h1 class="m-3 text-center"></h1>
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="{% url 'home'%}">Home</a></li>
         <li class="breadcrumb-item"><a href="{% url 'posts_index'%}">All Posts</a></li>
-        <li class="breadcrumb-item active">Travel</li>
+        <li class="breadcrumb-item active">Post Detail</li>
     </ol>
 
-    {% block content %}
+    <div class="container-fluid">
+        <div class="card mb-3 ">
+            <h3 class="card-header">Card header</h3>
+            <div class="card-body">
+                <h5 class="card-title">Special title treatment</h5>
+                <h6 class="card-subtitle text-muted">Support card subtitle</h6>
+            </div>
+            <img class="img-fluid" src="/static//images/image.jpg" alt="">
+            <div class="card-body">
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's content. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab suscipit officiis
+                    tempora. Veritatis aspernatur optio autem laborum cumque sint magnam eum error soluta tenetur
+                    facilis, impedit atque itaque. Fugit sapiente temporibus inventore nam sed deleniti, amet, debitis
+                    ipsum dolores officia atque doloribus veniam sequi magnam est repudiandae tenetur. Cum, mollitia?
+                </p>
+            </div>
+            <div class="card-body">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Cras justo odio</li>
+                    <li class="list-group-item">Dapibus ac facilisis in</li>
+                    <li class="list-group-item">Vestibulum at eros</li>
+                </ul>
+            </div>
+            <img class="img-fluid" src="/static//images/image.jpg" alt="">
+            <div class="card-body">
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's content. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab suscipit officiis
+                    tempora. Veritatis aspernatur optio autem laborum cumque sint magnam eum error soluta tenetur
+                    facilis, impedit atque itaque. Fugit sapiente temporibus inventore nam sed deleniti, amet, debitis
+                    ipsum dolores officia atque doloribus veniam sequi magnam est repudiandae tenetur. Cum, mollitia?
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, tenetur. Facilis repellat eveniet nam
+                    architecto voluptate, ratione eos obcaecati dolorem praesentium sed reiciendis at similique eaque,
+                    commodi vero sapiente! Nulla, quam! Sequi incidunt rerum officiis ducimus minus dolor fugit quae
+                    voluptatum fuga assumenda iure expedita molestias ipsa suscipit ad, rem natus dolore! Reiciendis
+                    autem sit dolor laborum fugiat maxime ullam, at nostrum corporis inventore, quaerat unde ipsam
+                    beatae commodi! Recusandae libero magnam dolorum commodi ipsum ab sequi ipsa architecto neque
+                    mollitia corrupti odio assumenda, distinctio esse sapiente repellendus aliquid eligendi sunt ullam!
+                    Provident pariatur ea distinctio. Voluptatem rerum incidunt corporis.
+                </p>
+            </div>
+            <div class="card-body">
+                <a href="#" class="card-link">Card link</a>
+                <a href="#" class="card-link">Another link</a>
+            </div>
+            <div class="card-footer text-muted">
+                2 days ago
+            </div>
+        </div>
+    </div>
+
+    {% endblock %}

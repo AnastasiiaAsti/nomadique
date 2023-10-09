@@ -10,6 +10,10 @@ def posts_index(request):
     return render(request, "posts/index.html")
 
 
+def posts_detail(request):
+    return render(request, "posts/detail.html")
+
+
 def deals_index(request):
     return render(request, "deals/index.html")
 
