@@ -6,6 +6,10 @@ def home(request):
     return render(request, "home.html")
 
 
+def map(request):
+    return render(request, "map.html")
+
+
 def posts_index(request):
     return render(request, "posts/index.html")
 
