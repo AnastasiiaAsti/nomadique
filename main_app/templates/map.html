@@ -1,3 +1,80 @@
-{% extends 'base.html' %} {% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
 
-{% endblock %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/{{ sketchy }}/bootstrap.min.css">
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.css' rel='stylesheet' />
+    <title>NOMADIQUE</title>
+</head>
+{% load static %}
+
+
+<body class="bg-light">
+
+    <div class="bs-component">
+        <nav class="navbar navbar-expand-lg bg-light p-3" data-bs-theme="light">
+            <div class="container-fluid">
+                <a href="{% url 'home'%}" class="navbar-brand">NOMADIQUE</a>
+                <button class="navbar-toggler collapsed" type="button" data-toggle="collapse"
+                    data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarColor03">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item"><a class="m-3 nav-link" href="{% url 'map' %}">Map</a>
+                        </li>
+                        <li class="nav-item"><a class="m-3 nav-link" href="{% url 'posts_index' %}">Travel</a>
+                        </li>
+                        <li class="nav-item"><a class="m-3 nav-link" href="{% url 'deals_index' %}">Deals</a></li>
+                        <li class="nav-item"><a class="m-3 nav-link" href="{% url 'thrifts_index' %}">Thriftees and
+                                more</a></li>
+                        <li class="nav-item"><a class="m-3 nav-link" href="{% url 'home' %}">Donate</a></li>
+                    </ul>
+                    <form class="d-flex">
+                        <input class="form-control me-sm-2" type="search" placeholder="Search">
+                        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+                    </form>
+
+                </div>
+            </div>
+        </nav>
+
+
+    </div>
+    <main class="">
+        <div class="container">
+            <div class="container-fluid mt-3">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{% url 'home'%}">Home</a></li>
+                    <li class="breadcrumb-item active">Map</li>
+                </ol>
+            </div>
+
+            <div id='map' width="100%" style='height:400px'></div>
+        </div>
+    </main>
+
+
+    <div id='map' style='width: 400px; height: 300px;'></div>
+    <script>
+        mapboxgl.accessToken = 'pk.eyJ1IjoiYXN0aXN0YXRlb2ZtaW5kIiwiYSI6ImNsbmpsb3ZwZjB3ZmQycnFpOXUzYWdvZWsifQ.WU1pl1Q1xl0NTtCG6C46xQ';
+        var map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/streets-v11'
+        });
+    </script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

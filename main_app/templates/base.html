@@ -8,6 +8,10 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/{{ sketchy }}/bootstrap.min.css">
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.css' rel='stylesheet' />
+
+
     <title>NOMADIQUE</title>
 </head>
 {% load static %}
@@ -54,9 +58,10 @@
 
     <!-- Add this before the closing </body> tag -->
     <script>
-        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
-        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-            return new bootstrap.Tooltip(tooltipTriggerEl)
+        mapboxgl.accessToken = 'pk.eyJ1IjoiYXN0aXN0YXRlb2ZtaW5kIiwiYSI6ImNsbmpsb3ZwZjB3ZmQycnFpOXUzYWdvZWsifQ.WU1pl1Q1xl0NTtCG6C46xQ';
+        var map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/streets-v10'
         });
     </script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
